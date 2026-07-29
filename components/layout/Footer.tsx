@@ -1,0 +1,104 @@
+import Link from "next/link";
+import { Container } from "@/components/ui/Container";
+import { navItems } from "@/content/navigation";
+import { siteConfig, orgIdentity, socialLinks, accountabilityLinks } from "@/content/site";
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="border-t border-border bg-secondary">
+      <Container className="grid gap-12 py-16 md:grid-cols-4 md:py-20">
+        <div className="md:col-span-2">
+          <p className="font-display text-2xl text-foreground">{siteConfig.name}</p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            {siteConfig.description}
+          </p>
+          <ul className="mt-6 flex gap-4">
+            {socialLinks.map((social) => (
+              <li key={social.label}>
+                <Link
+                  href={social.href}
+                  className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                  aria-label={
+                    social.isPlaceholder
+                      ? `${social.label}: link to be provided`
+                      : social.label
+                  }
+                >
+                  {social.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <nav aria-label="Footer">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Explore
+          </p>
+          <ul className="mt-4 flex flex-col gap-3">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-sm text-foreground/80 hover:text-foreground"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/#get-involved" className="text-sm text-foreground/80 hover:text-foreground">
+                Volunteer
+              </Link>
+            </li>
+            <li>
+              <Link href="/#get-involved" className="text-sm text-foreground/80 hover:text-foreground">
+                Partner
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Contact &amp; Accountability
+          </p>
+          <ul className="mt-4 flex flex-col gap-3 text-sm text-foreground/80">
+            <li className={orgIdentity.email.isPlaceholder ? "text-muted-foreground italic" : ""}>
+              {orgIdentity.email.value}
+            </li>
+            <li className={orgIdentity.phone.isPlaceholder ? "text-muted-foreground italic" : ""}>
+              {orgIdentity.phone.value}
+            </li>
+            <li className={orgIdentity.physicalAddress.isPlaceholder ? "text-muted-foreground italic" : ""}>
+              {orgIdentity.physicalAddress.value}
+            </li>
+          </ul>
+          <ul className="mt-6 flex flex-col gap-3">
+            {accountabilityLinks.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-foreground/80 underline-offset-4 hover:text-foreground hover:underline"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+
+      <div className="border-t border-border py-6">
+        <Container className="flex flex-col items-center justify-between gap-2 text-xs text-muted-foreground md:flex-row">
+          <p>
+            &copy; {year} {siteConfig.legalName}. All rights reserved.
+          </p>
+          <p className="italic">{orgIdentity.registrationStatus.value}</p>
+        </Container>
+      </div>
+    </footer>
+  );
+}
