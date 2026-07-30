@@ -14,7 +14,7 @@ export const programmes: Programme[] = [
       "A calm, structured daily routine",
     ],
     image: {
-      src: "/images/safe-house.avif",
+      src: "/images/safehouse.jpg",
       alt: "The Njoo Dada safe house, offering shelter and stability for girls in crisis.",
     },
     layout: "feature",
@@ -54,7 +54,7 @@ export const programmes: Programme[] = [
       "Family mediation where appropriate",
     ],
     image: {
-      src: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1200&q=80",
+      src: "/images/programme1.webp",
       alt: "A counsellor listens attentively during a one-on-one support conversation.",
       isPlaceholder: true,
     },

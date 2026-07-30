@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ImageAsset } from "@/content/types";
+import { cn } from "@/lib/cn";
 
 type ImageFrameProps = {
   image: ImageAsset;
@@ -27,7 +28,7 @@ export function ImageFrame({
 }: ImageFrameProps) {
   return (
     <div
-      className={`relative overflow-hidden border border-border bg-muted ${className}`}
+      className={cn("relative overflow-hidden border border-border bg-muted", className)}
     >
       {fill ? (
         <Image
