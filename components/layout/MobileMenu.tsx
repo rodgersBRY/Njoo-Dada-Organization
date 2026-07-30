@@ -33,35 +33,41 @@ export function MobileMenu({ open, onClose, navItems, cta }: MobileMenuProps) {
   }, [open, onClose]);
 
   return (
+    // Outer wrapper never exceeds the viewport and clips the sliding panel,
+    // so the off-canvas panel can't inflate document scrollWidth on mobile.
     <div
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
       aria-label="Mobile navigation"
       inert={!open}
-      className={`fixed inset-0 top-[72px] z-40 bg-background transition-transform duration-300 ease-out md:hidden ${
-        open ? "translate-x-0" : "translate-x-full"
-      }`}
+      className="fixed inset-0 top-[72px] z-40 overflow-hidden md:hidden"
     >
-      <nav className="flex h-full flex-col justify-between px-6 py-10">
-        <ul className="flex flex-col gap-1">
-          {navItems.map((item, index) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                onClick={onClose}
-                ref={index === 0 ? firstLinkRef : undefined}
-                className="block min-h-11 py-4 font-display text-3xl text-foreground"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Button href={cta.href} variant="primary" className="w-full justify-center" onClick={onClose}>
-          {cta.label}
-        </Button>
-      </nav>
+      <div
+        className={`h-full w-full bg-background transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="flex h-full flex-col justify-between px-6 py-10">
+          <ul className="flex flex-col gap-1">
+            {navItems.map((item, index) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  ref={index === 0 ? firstLinkRef : undefined}
+                  className="block min-h-11 py-4 font-display text-3xl text-foreground"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Button href={cta.href} variant="primary" className="w-full justify-center" onClick={onClose}>
+            {cta.label}
+          </Button>
+        </nav>
+      </div>
     </div>
   );
 }
