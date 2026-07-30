@@ -12,50 +12,60 @@ export const siteConfig = {
 };
 
 export const orgIdentity: {
-  registrationStatus: OrgContactField;
-  registrationNumber: OrgContactField;
-  physicalAddress: OrgContactField;
+  postalAddress: OrgContactField;
   email: OrgContactField;
   phone: OrgContactField;
 } = {
-  registrationStatus: {
-    label: "Registration status",
-    value: "[CLIENT TO PROVIDE]",
-    isPlaceholder: true,
-  },
-  registrationNumber: {
-    label: "Registration number",
-    value: "[CLIENT TO PROVIDE]",
-    isPlaceholder: true,
-  },
-  physicalAddress: {
-    label: "Office address",
-    value: "[CLIENT TO PROVIDE]",
-    isPlaceholder: true,
+  postalAddress: {
+    label: "Postal address",
+    value: "49773-00100 Nairobi",
+    isPlaceholder: false,
   },
   email: {
     label: "Email",
-    value: "[CLIENT TO PROVIDE]",
-    isPlaceholder: true,
+    value: "info@njoodada.co.ke",
+    isPlaceholder: false,
   },
   phone: {
     label: "Phone",
-    value: "+254720149568",
+    value: "+254733816086",
     isPlaceholder: false,
   },
 };
 
-export const socialLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
-  { label: "Facebook", href: "https://www.facebook.com/www.njoodada.org/", isPlaceholder: false },
-  { label: "Instagram", href: "https://www.instagram.com/njoodadasafehouse", isPlaceholder: false },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/njoodada/", isPlaceholder: false },
+export const socialLinks: {
+  label: string;
+  href: string;
+  isPlaceholder: boolean;
+}[] = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/www.njoodada.org/",
+    isPlaceholder: false,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/njoodadasafehouse",
+    isPlaceholder: false,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/njoodada/",
+    isPlaceholder: false,
+  },
 ];
 
-export const accountabilityLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
-  { label: "Annual report", href: "#", isPlaceholder: true },
-];
+export const accountabilityLinks: {
+  label: string;
+  href: string;
+  isPlaceholder: boolean;
+}[] = [{ label: "Annual report", href: "#", isPlaceholder: true }];
 
-export const legalLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
+export const legalLinks: {
+  label: string;
+  href: string;
+  isPlaceholder: boolean;
+}[] = [
   { label: "Safeguarding policy", href: "#", isPlaceholder: true },
   { label: "Privacy policy", href: "#", isPlaceholder: true },
 ];

@@ -23,10 +23,10 @@ export function Partners() {
             </li>
           ))}
         </ul>
-
+{/* 
         <p className="mt-6 text-sm italic text-muted-foreground">
           Verified partner names and logos to follow as they are confirmed by Njoo Dada.
-        </p>
+        </p> */}
       </Container>
     </section>
   );
