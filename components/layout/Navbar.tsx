@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -28,9 +29,16 @@ export function Navbar() {
           : "border-transparent bg-background/0"
       }`}
     >
-      <Container className="flex h-[72px] items-center justify-between">
-        <Link href="/" className="font-display text-2xl tracking-tight text-foreground">
-          {siteConfig.name}
+      <Container className="flex h-18 items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt={siteConfig.name}
+            width={46}
+            height={40}
+            priority
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden md:block">

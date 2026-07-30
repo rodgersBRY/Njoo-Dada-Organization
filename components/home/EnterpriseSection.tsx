@@ -12,13 +12,8 @@ export function EnterpriseSection() {
         <Reveal as="div" className="relative md:col-span-6">
           <ImageFrame
             image={enterpriseImages[0]}
-            className="aspect-[4/5] w-4/5"
-            sizes="(min-width: 768px) 35vw, 80vw"
-          />
-          <ImageFrame
-            image={enterpriseImages[1]}
-            className="absolute bottom-[-2rem] right-0 aspect-[3/4] w-2/5 border-4 border-background"
-            sizes="240px"
+            className="aspect-4/5 w-full md:aspect-5/6"
+            sizes="(min-width: 768px) 45vw, 90vw"
           />
         </Reveal>
 

@@ -12,14 +12,11 @@ export const whyContent = {
 
 export const whyImages: { primary: ImageAsset; secondary: ImageAsset } = {
   primary: {
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=80",
-    alt: "Students engaged in a classroom lesson, representing a return to learning.",
-    isPlaceholder: true,
-    focalPoint: "center 25%",
+    src: "/images/women.avif",
+    alt: "A young Kenyan woman with a calm, confident expression.",
   },
   secondary: {
-    src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=700&q=80",
-    alt: "A young woman with a calm, confident expression.",
-    isPlaceholder: true,
+    src: "/images/donation1.avif",
+    alt: "A community moment representing support and generosity.",
   },
 };

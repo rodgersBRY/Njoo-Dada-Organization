@@ -10,13 +10,7 @@ export const enterpriseContent = {
 
 export const enterpriseImages: ImageAsset[] = [
   {
-    src: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1000&q=80",
-    alt: "A finished handcrafted garment held up on a hanger, representing a piece ready for sale.",
-    isPlaceholder: true,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1000&q=80",
-    alt: "A young woman wearing a handmade printed garment, representing pride in craftsmanship.",
-    isPlaceholder: true,
+    src: "/images/njoo-dada-bracelets.avif",
+    alt: "Handcrafted bracelets made through Njoo Dada's economic empowerment programme.",
   },
 ];

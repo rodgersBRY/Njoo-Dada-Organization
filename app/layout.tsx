@@ -60,6 +60,7 @@ const organizationJsonLd = {
   "@type": "NGO",
   name: siteConfig.name,
   url: siteConfig.url,
+  logo: `${siteConfig.url}/images/logo.png`,
   description: siteConfig.description,
   foundingDate: `${siteConfig.foundedYear}`,
   areaServed: {

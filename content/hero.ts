@@ -13,20 +13,11 @@ export const heroContent = {
 
 export const heroImages: ImageAsset[] = [
   {
-    src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1600&q=80",
+    src: "/images/women.avif",
     alt: "A young Kenyan woman looks directly at the camera with a calm, confident expression.",
-    isPlaceholder: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
-    alt: "A teacher leads a classroom discussion with secondary school students.",
-    isPlaceholder: true,
-    focalPoint: "center 20%",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1600&q=80",
-    alt: "Two women share a warm, attentive conversation.",
-    isPlaceholder: true,
-    focalPoint: "center 25%",
+    src: "/images/school-children.avif",
+    alt: "Schoolchildren in a classroom, representing a return to learning.",
   },
 ];

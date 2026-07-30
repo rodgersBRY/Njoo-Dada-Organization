@@ -18,12 +18,12 @@ export function StoryIntro() {
           <ImageFrame
             image={whyImages.primary}
             sizes="(min-width: 1024px) 40vw, 90vw"
-            className="relative aspect-[6/7] w-full"
+            className="relative aspect-6/7 w-full"
           />
           <ImageFrame
             image={whyImages.secondary}
             sizes="240px"
-            className="absolute -bottom-10 -right-6 aspect-[4/5] w-32 shadow-[0_12px_30px_-12px_rgba(33,31,26,0.35)] sm:w-44 md:w-52"
+            className="absolute -bottom-10 -right-6 aspect-4/5 w-32 shadow-[0_12px_30px_-12px_rgba(33,31,26,0.35)] sm:w-44 md:w-52"
           />
         </Reveal>
 
