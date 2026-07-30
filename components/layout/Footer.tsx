@@ -73,12 +73,18 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/#get-involved" className="text-sm text-foreground/80 hover:text-foreground">
+              <Link
+                href="/#get-involved"
+                className="text-sm text-foreground/80 hover:text-foreground"
+              >
                 Volunteer
               </Link>
             </li>
             <li>
-              <Link href="/#get-involved" className="text-sm text-foreground/80 hover:text-foreground">
+              <Link
+                href="/#get-involved"
+                className="text-sm text-foreground/80 hover:text-foreground"
+              >
                 Partner
               </Link>
             </li>
@@ -91,13 +97,31 @@ export function Footer() {
           </p>
           <ul className="mt-4 flex flex-col gap-3 text-sm text-foreground/80">
             <li className={orgIdentity.email.isPlaceholder ? "text-muted-foreground italic" : ""}>
-              {orgIdentity.email.value}
+              {orgIdentity.email.isPlaceholder ? (
+                orgIdentity.email.value
+              ) : (
+                <a href={`mailto:${orgIdentity.email.value}`} className="hover:text-foreground hover:underline">
+                  {orgIdentity.email.value}
+                </a>
+              )}
             </li>
             <li className={orgIdentity.phone.isPlaceholder ? "text-muted-foreground italic" : ""}>
-              {orgIdentity.phone.value}
+              {orgIdentity.phone.isPlaceholder ? (
+                orgIdentity.phone.value
+              ) : (
+                <a href={`tel:${orgIdentity.phone.value}`} className="hover:text-foreground hover:underline">
+                  {orgIdentity.phone.value}
+                </a>
+              )}
             </li>
-            <li className={orgIdentity.physicalAddress.isPlaceholder ? "text-muted-foreground italic" : ""}>
-              {orgIdentity.physicalAddress.value}
+            <li
+              className={
+                orgIdentity.postalAddress.isPlaceholder
+                  ? "text-muted-foreground italic"
+                  : ""
+              }
+            >
+              {orgIdentity.postalAddress.value}
             </li>
           </ul>
           <ul className="mt-6 flex flex-col gap-3">
@@ -119,7 +143,6 @@ export function Footer() {
         <Container className="flex flex-col items-center justify-between gap-3 text-xs text-muted-foreground md:flex-row">
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
-            <span className="italic"> {orgIdentity.registrationStatus.value}</span>
           </p>
           <ul className="flex gap-6">
             {legalLinks.map((link) => (
