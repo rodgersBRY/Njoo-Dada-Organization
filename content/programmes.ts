@@ -100,12 +100,14 @@ export const approachStages: ApproachStage[] = [
   {
     number: "01",
     title: "Protect",
-    description: "Emergency safety, shelter, and stabilisation for girls in crisis.",
+    description:
+      "Emergency safety, shelter, and stabilisation for girls in crisis.",
   },
   {
     number: "02",
     title: "Restore",
-    description: "Counselling and psychosocial care to begin healing from trauma.",
+    description:
+      "Counselling and psychosocial care to begin healing from trauma.",
   },
   {
     number: "03",

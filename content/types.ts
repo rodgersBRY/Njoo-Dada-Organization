@@ -3,7 +3,6 @@ export type ImageAsset = {
   alt: string;
   /** Set when the asset is a placeholder awaiting approved organisation photography. */
   isPlaceholder?: boolean;
-  /** CSS object-position override for source photos whose subject sits off-centre. */
   focalPoint?: string;
 };
 
@@ -33,10 +32,6 @@ export type ProgrammeVisualKey =
   | "pathway"
   | "community";
 
-/**
- * Deliberately image-free: safeguarding policy keeps beneficiary photography out
- * of this section, so the abstract `visual` motif carries the imagery instead.
- */
 export type Programme = {
   slug: string;
   number: string;
@@ -60,12 +55,9 @@ export type BeneficiaryStory = {
   subheadline: string;
   summary: string;
   journey: string[];
-  /** Null until an approved photograph is confirmed — renders a pending-approval placeholder. */
   image: ImageAsset | null;
   href: string;
   ctaLabel: string;
-  /** Always true for stories sourced from third-party material pending Njoo Dada + subject approval. */
-  requiresApproval: boolean;
 };
 
 export type GetInvolvedAction = {

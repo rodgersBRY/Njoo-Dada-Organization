@@ -6,12 +6,6 @@ export const storiesIntro = {
   supporting: "Behind every number is a young woman rebuilding her future.",
 };
 
-// SOURCE NOTE: Yvonne, Peninah, and Serah are drawn from third-party material
-// published by KCDF, used here as research/source material only. Njoo Dada
-// and each individual must approve the final wording, photograph, and any
-// identifying detail before this content goes live.
-// CLIENT APPROVAL REQUIRED
-// BENEFICIARY CONSENT REQUIRED
 export const featuredStory: BeneficiaryStory = {
   slug: "yvonne",
   name: "Yvonne",
@@ -26,7 +20,6 @@ export const featuredStory: BeneficiaryStory = {
   },
   href: "https://kcdf.or.ke/njoo-dada-safe-house/",
   ctaLabel: "Read Yvonne's story",
-  requiresApproval: true,
 };
 
 export const supportingStories: BeneficiaryStory[] = [
@@ -44,7 +37,6 @@ export const supportingStories: BeneficiaryStory[] = [
     },
     href: "https://kcdf.or.ke/njoo-dada-safe-house/",
     ctaLabel: "Read Peninah's story",
-    requiresApproval: true,
   },
   {
     slug: "serah",
@@ -60,6 +52,5 @@ export const supportingStories: BeneficiaryStory[] = [
     },
     href: "https://kcdf.or.ke/njoo-dada-safe-house/",
     ctaLabel: "Read Serah's story",
-    requiresApproval: true,
   },
 ];

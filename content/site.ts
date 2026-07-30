@@ -23,7 +23,7 @@ export const orgIdentity: {
   },
   email: {
     label: "Email",
-    value: "info@njoodada.co.ke",
+    value: "info@njoodada.or.ke",
     isPlaceholder: false,
   },
   phone: {

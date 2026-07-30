@@ -1,9 +1,5 @@
 import type { ImpactStat } from "./types";
 
-/**
- * Figures supplied by Njoo Dada. Must be verified by the organisation before
- * production launch. Do not modify or embellish.
- */
 export const impactStats: ImpactStat[] = [
   { value: 100, suffix: "+", label: "Teenage mothers rescued" },
   { value: 60, suffix: "+", label: "Girls back in school" },
