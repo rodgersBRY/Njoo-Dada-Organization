@@ -32,6 +32,7 @@ export const programmes: Programme[] = [
       src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80",
       alt: "A teacher leads a classroom discussion with a group of secondary school students.",
       isPlaceholder: true,
+      focalPoint: "center 20%",
     },
     secondaryImage: {
       src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80",

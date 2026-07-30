@@ -2,6 +2,7 @@ import type { ElementType, ReactNode } from "react";
 
 type SectionHeadingProps = {
   eyebrow?: string;
+  eyebrowClassName?: string;
   as?: ElementType;
   children: ReactNode;
   supporting?: ReactNode;
@@ -11,6 +12,7 @@ type SectionHeadingProps = {
 
 export function SectionHeading({
   eyebrow,
+  eyebrowClassName = "text-accent",
   as: Tag = "h2",
   children,
   supporting,
@@ -22,7 +24,7 @@ export function SectionHeading({
   return (
     <div className={`flex max-w-3xl flex-col gap-4 ${alignment} ${className}`}>
       {eyebrow ? (
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+        <span className={`text-xs font-semibold uppercase tracking-[0.2em] ${eyebrowClassName}`}>
           {eyebrow}
         </span>
       ) : null}

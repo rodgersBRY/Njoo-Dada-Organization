@@ -37,6 +37,7 @@ export function ImageFrame({
           sizes={sizes}
           priority={priority}
           className="object-cover"
+          style={{ objectPosition: image.focalPoint ?? "center" }}
         />
       ) : (
         <Image
@@ -47,6 +48,7 @@ export function ImageFrame({
           sizes={sizes}
           priority={priority}
           className="h-auto w-full object-cover"
+          style={{ objectPosition: image.focalPoint ?? "center" }}
         />
       )}
     </div>

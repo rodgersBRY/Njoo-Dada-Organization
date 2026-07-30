@@ -3,6 +3,8 @@ export type ImageAsset = {
   alt: string;
   /** Set when the asset is a placeholder awaiting approved organisation photography. */
   isPlaceholder?: boolean;
+  /** CSS object-position override for source photos whose subject sits off-centre. */
+  focalPoint?: string;
 };
 
 export type CtaVariant = "primary" | "secondary" | "ghost";

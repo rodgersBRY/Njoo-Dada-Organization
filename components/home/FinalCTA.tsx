@@ -1,0 +1,44 @@
+import Image from "next/image";
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
+import { finalCtaContent, finalCtaImage } from "@/content/final-cta";
+
+export function FinalCTA() {
+  return (
+    <section className="relative overflow-hidden py-28 md:py-36">
+      <Image
+        src={finalCtaImage.src}
+        alt={finalCtaImage.alt}
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-foreground/70" />
+
+      <Container className="relative max-w-3xl text-background">
+        <h2 className="font-display text-4xl leading-[1.1] text-balance sm:text-5xl md:text-6xl">
+          {finalCtaContent.headline}
+        </h2>
+        <p className="mt-6 text-lg leading-relaxed text-background/85 md:text-xl">
+          {finalCtaContent.body}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-4">
+          {finalCtaContent.ctas.map((cta) => (
+            <Button
+              key={cta.label}
+              href={cta.href}
+              variant={cta.variant === "primary" ? "primary" : "secondary"}
+              className={
+                cta.variant === "secondary"
+                  ? "border-background/40 text-background hover:border-background hover:bg-background/10"
+                  : ""
+              }
+            >
+              {cta.label}
+            </Button>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}

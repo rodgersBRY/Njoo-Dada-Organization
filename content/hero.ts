@@ -21,10 +21,12 @@ export const heroImages: ImageAsset[] = [
     src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80",
     alt: "A teacher leads a classroom discussion with secondary school students.",
     isPlaceholder: true,
+    focalPoint: "center 20%",
   },
   {
-    src: "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=1600&q=80",
-    alt: "Three women share a moment of laughter and conversation around a table.",
+    src: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=1600&q=80",
+    alt: "Two women share a warm, attentive conversation.",
     isPlaceholder: true,
+    focalPoint: "center 25%",
   },
 ];

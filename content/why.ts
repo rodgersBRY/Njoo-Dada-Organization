@@ -15,6 +15,7 @@ export const whyImages: { primary: ImageAsset; secondary: ImageAsset } = {
     src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=80",
     alt: "Students engaged in a classroom lesson, representing a return to learning.",
     isPlaceholder: true,
+    focalPoint: "center 25%",
   },
   secondary: {
     src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=700&q=80",

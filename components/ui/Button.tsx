@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import type { CtaVariant } from "@/content/types";
+import { cn } from "@/lib/cn";
 
 const variantClasses: Record<CtaVariant, string> = {
   primary:
@@ -30,7 +31,11 @@ export function Button({
   return (
     <Link
       href={href}
-      className={`group inline-flex min-h-11 items-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200 ${variantClasses[variant]} ${className}`}
+      className={cn(
+        "group inline-flex min-h-11 items-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200",
+        variantClasses[variant],
+        className,
+      )}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       {...rest}
     >
