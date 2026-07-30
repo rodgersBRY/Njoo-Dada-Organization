@@ -3,7 +3,7 @@ import { StoryIntro } from "@/components/home/StoryIntro";
 import { ApproachJourney } from "@/components/home/ApproachJourney";
 import { Programmes } from "@/components/home/Programmes";
 import { ImpactStats } from "@/components/home/ImpactStats";
-import { ImpactStory } from "@/components/home/ImpactStory";
+import { StoriesOfChange } from "@/components/home/StoriesOfChange";
 import { EnterpriseSection } from "@/components/home/EnterpriseSection";
 import { GetInvolved } from "@/components/home/GetInvolved";
 import { Partners } from "@/components/home/Partners";
@@ -18,7 +18,7 @@ export default function Home() {
       <ApproachJourney />
       <Programmes />
       <ImpactStats />
-      <ImpactStory />
+      <StoriesOfChange />
       <EnterpriseSection />
       <GetInvolved />
       <Partners />

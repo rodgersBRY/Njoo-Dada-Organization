@@ -43,11 +43,19 @@ export type ImpactStat = {
   label: string;
 };
 
-export type Story = {
-  narrative: string;
-  quote: string;
-  image: ImageAsset;
-  cta: Cta;
+export type BeneficiaryStory = {
+  slug: string;
+  name: string;
+  headline: string;
+  subheadline: string;
+  summary: string;
+  journey: string[];
+  /** Null until an approved photograph is confirmed — renders a pending-approval placeholder. */
+  image: ImageAsset | null;
+  href: string;
+  ctaLabel: string;
+  /** Always true for stories sourced from third-party material pending Njoo Dada + subject approval. */
+  requiresApproval: boolean;
 };
 
 export type GetInvolvedAction = {
