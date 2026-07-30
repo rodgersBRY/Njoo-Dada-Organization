@@ -12,11 +12,11 @@ export const whyContent = {
 
 export const whyImages: { primary: ImageAsset; secondary: ImageAsset } = {
   primary: {
-    src: "/images/women.avif",
-    alt: "A young Kenyan woman with a calm, confident expression.",
+    src: "/images/lunar-odawa.jpeg",
+    alt: "Dr. Lunar Odawa speaking into a microphone at a Njoo Dada event.",
   },
   secondary: {
-    src: "/images/donation1.avif",
-    alt: "A community moment representing support and generosity.",
+    src: "/images/dr-lunar-odawa-ceo.jpeg",
+    alt: "Portrait of Dr. Lunar Odawa, Chief Executive Officer of Njoo Dada.",
   },
 };

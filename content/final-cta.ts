@@ -10,6 +10,6 @@ export const finalCtaContent = {
 };
 
 export const finalCtaImage: ImageAsset = {
-  src: "/images/giving-exchange.webp",
+  src: "/images/event.jpeg",
   alt: "Supporting Njoo Dada's work, helping a girl or young mother take her next step.",
 };
