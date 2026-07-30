@@ -35,7 +35,7 @@ export function Hero() {
         </div>
 
         <div className="relative lg:col-span-6">
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-border sm:aspect-[5/4] lg:aspect-[4/5]">
+          <div className="relative aspect-4/5 w-full overflow-hidden border border-border sm:aspect-5/4 lg:aspect-4/5">
             <HeroCarousel images={heroImages} />
           </div>
           <div
