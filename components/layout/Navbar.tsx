@@ -22,64 +22,70 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled
-          ? "border-border bg-background/95 backdrop-blur-sm"
-          : "border-transparent bg-background/0"
-      }`}
-    >
-      <Container className="flex h-18 items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt={siteConfig.name}
-            width={64}
-            height={56}
-            priority
-            className="h-14 w-auto"
-          />
-        </Link>
+    <>
+      <header
+        className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+          scrolled
+            ? "border-border bg-background/95 backdrop-blur-sm"
+            : "border-transparent bg-background/0"
+        }`}
+      >
+        <Container className="flex h-18 items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt={siteConfig.name}
+              width={64}
+              height={56}
+              priority
+              className="h-14 w-auto"
+            />
+          </Link>
 
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav aria-label="Primary" className="hidden md:block">
+            <ul className="flex items-center gap-8">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <div className="hidden md:block">
-          <Button href={primaryNavCta.href} variant={primaryNavCta.variant}>
-            {primaryNavCta.label}
-          </Button>
-        </div>
+          <div className="hidden md:block">
+            <Button href={primaryNavCta.href} variant={primaryNavCta.variant}>
+              {primaryNavCta.label}
+            </Button>
+          </div>
 
-        <button
-          type="button"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          className="flex min-h-11 min-w-11 items-center justify-center text-foreground md:hidden"
-        >
-          {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-      </Container>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="flex min-h-11 min-w-11 items-center justify-center text-foreground md:hidden"
+          >
+            {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+        </Container>
+      </header>
 
+      {/* Rendered outside <header> on purpose: once scrolled, the header gains
+          backdrop-blur, and a backdrop-filter makes an element the containing
+          block for fixed-position descendants — which would collapse this
+          fixed overlay to zero height. */}
       <MobileMenu
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
         navItems={navItems}
         cta={primaryNavCta}
       />
-    </header>
+    </>
   );
 }
