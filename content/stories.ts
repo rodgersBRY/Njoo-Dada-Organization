@@ -20,15 +20,15 @@ export const featuredStory: BeneficiaryStory = {
   summary:
     "After finding safety and support through Njoo Dada, Yvonne pursued education and developed skills in hairdressing and beauty. Today, she is building her experience, serving clients and working toward creating a business of her own.",
   journey: ["Safe House", "Education", "Skills", "Enterprise"],
-  // APPROVED IMAGE REQUIRED — no photo until Njoo Dada confirms one for publication.
-  image: null,
+  image: {
+    src: "/images/yvonne-whitney-salon.webp",
+    alt: "Yvonne at work in a hair and beauty salon, building the career she trained for.",
+  },
   href: "/#stories",
   ctaLabel: "Read her story",
   requiresApproval: true,
 };
 
-// CLIENT APPROVAL REQUIRED
-// BENEFICIARY CONSENT REQUIRED
 export const supportingStories: BeneficiaryStory[] = [
   {
     slug: "peninah",
@@ -38,8 +38,10 @@ export const supportingStories: BeneficiaryStory[] = [
     summary:
       "After developing her baking and catering skills, Peninah began turning her craft into income while working toward further education.",
     journey: ["Skills", "Business", "Income"],
-    // APPROVED IMAGE REQUIRED
-    image: null,
+    image: {
+      src: "/images/peninah-cakes.webp",
+      alt: "Peninah with baked goods from the catering business built on her baking skills.",
+    },
     href: "/#stories",
     ctaLabel: "Read story",
     requiresApproval: true,
@@ -52,8 +54,10 @@ export const supportingStories: BeneficiaryStory[] = [
     summary:
       "Through tailoring, Serah found a new way to generate income and support her family's everyday needs.",
     journey: ["Training", "Work", "Family"],
-    // APPROVED IMAGE REQUIRED
-    image: null,
+    image: {
+      src: "/images/serah-nyambura-tailor.webp",
+      alt: "Serah working as a tailor, the skill that now supports her and her family.",
+    },
     href: "/#stories",
     ctaLabel: "Read story",
     requiresApproval: true,
