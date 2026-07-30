@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import type { IconType } from "react-icons";
 import { Container } from "@/components/ui/Container";
 import { navItems } from "@/content/navigation";
 import {
@@ -9,6 +12,12 @@ import {
   legalLinks,
 } from "@/content/site";
 
+const socialIcons: Record<string, IconType> = {
+  Facebook: FaFacebook,
+  Instagram: FaInstagram,
+  LinkedIn: FaLinkedin,
+};
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -16,26 +25,35 @@ export function Footer() {
     <footer className="border-t border-border bg-secondary">
       <Container className="grid gap-12 py-16 md:grid-cols-4 md:py-20">
         <div className="md:col-span-2">
-          <p className="font-display text-2xl text-foreground">{siteConfig.name}</p>
+          <Image
+            src="/images/logo.png"
+            alt={siteConfig.name}
+            width={46}
+            height={40}
+            className="h-10 w-auto"
+          />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             {siteConfig.description}
           </p>
           <ul className="mt-6 flex gap-4">
-            {socialLinks.map((social) => (
-              <li key={social.label}>
-                <Link
-                  href={social.href}
-                  className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-                  aria-label={
-                    social.isPlaceholder
-                      ? `${social.label}: link to be provided`
-                      : social.label
-                  }
-                >
-                  {social.label}
-                </Link>
-              </li>
-            ))}
+            {socialLinks.map((social) => {
+              const Icon = socialIcons[social.label];
+              return (
+                <li key={social.label}>
+                  <Link
+                    href={social.href}
+                    className="text-muted-foreground hover:text-accent"
+                    aria-label={
+                      social.isPlaceholder
+                        ? `${social.label}: link to be provided`
+                        : social.label
+                    }
+                  >
+                    <Icon aria-hidden="true" className="h-5 w-5" />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
