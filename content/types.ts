@@ -26,15 +26,25 @@ export type ApproachStage = {
   description: string;
 };
 
+export type ProgrammeVisualKey =
+  | "shelter"
+  | "book"
+  | "connection"
+  | "pathway"
+  | "community";
+
+/**
+ * Deliberately image-free: safeguarding policy keeps beneficiary photography out
+ * of this section, so the abstract `visual` motif carries the imagery instead.
+ */
 export type Programme = {
   slug: string;
+  number: string;
   title: string;
   tagline: string;
   description: string;
   services: string[];
-  image: ImageAsset | null;
-  secondaryImage?: ImageAsset;
-  layout: "feature" | "split" | "collage" | "full";
+  visual: ProgrammeVisualKey;
 };
 
 export type ImpactStat = {

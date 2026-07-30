@@ -1,104 +1,98 @@
 import type { ApproachStage, Programme } from "./types";
 
+export const programmesIntro = {
+  eyebrow: "Our Programmes",
+  headline: "Support that creates pathways forward.",
+  supporting:
+    "Our programmes work together to help vulnerable teenage girls and teenage mothers move from crisis toward safety, opportunity and independence.",
+};
+
 export const programmes: Programme[] = [
   {
     slug: "safe-house",
+    number: "01",
     title: "Safe House",
     tagline: "A safe place to begin again.",
     description:
-      "When a girl arrives in crisis, the first need is safety. Our safe house provides emergency shelter, basic needs, and a calm environment where healing can begin, away from the abuse, abandonment, or exploitation she has faced.",
+      "Our transitional safe house provides emergency accommodation for girls and young mothers escaping abuse, neglect, violence, or crisis.",
     services: [
-      "Emergency shelter and basic needs",
-      "Medical referral and support",
-      "Safety planning and case management",
-      "A calm, structured daily routine",
+      "Protection",
+      "Counselling",
+      "Medical Referrals",
+      "Parenting Support",
+      "Legal Referrals",
+      "Reintegration Planning",
     ],
-    image: {
-      src: "/images/safehouse.jpg",
-      alt: "The Njoo Dada safe house, offering shelter and stability for girls in crisis.",
-    },
-    layout: "feature",
+    visual: "shelter",
   },
   {
     slug: "education",
+    number: "02",
     title: "Education",
-    tagline: "Opening pathways to learning and opportunity.",
+    tagline: "Keeping futures open.",
     description:
-      "Interrupted schooling is one of the most common consequences of crisis. We support girls to re-enrol in school, catch up on missed learning, and pursue technical and vocational training that fits their circumstances.",
+      "We support girls and young mothers to continue their education and develop the skills they need for their future.",
     services: [
-      "School re-enrolment support",
-      "Remedial and bridging classes",
-      "TVET and vocational scholarships",
-      "Mentorship for academic goals",
+      "Secondary Education",
+      "TVET",
+      "School Fees",
+      "School Supplies",
+      "Mentorship",
+      "Career Guidance",
+      "Life Skills",
     ],
-    image: {
-      src: "/images/school-children.avif",
-      alt: "Schoolchildren supported by Njoo Dada's education programme.",
-    },
-    secondaryImage: {
-      src: "/images/donated-puzzles.avif",
-      alt: "Donated learning materials, representing renewed access to schooling.",
-    },
-    layout: "collage",
+    visual: "book",
   },
   {
     slug: "psychosocial-support",
+    number: "03",
     title: "Psychosocial Support",
-    tagline: "Helping young women heal and rebuild.",
+    tagline: "Healing. Resilience. Hope.",
     description:
-      "Trauma from abuse, abandonment, or stigma does not resolve on its own. Trained counsellors work with each girl individually and in group settings, building the emotional foundation she needs to trust, hope, and move forward.",
+      "We provide psychosocial support that helps girls and young mothers navigate trauma, rebuild emotional resilience and strengthen their wellbeing.",
     services: [
-      "One-on-one counselling",
-      "Peer support groups",
-      "Trauma-informed care",
-      "Family mediation where appropriate",
+      "Individual Counselling",
+      "Group Therapy",
+      "Parenting Support",
+      "Trauma Recovery",
+      "Emotional Resilience",
+      "Mental Health Education",
     ],
-    image: {
-      src: "/images/programme1.webp",
-      alt: "A counsellor listens attentively during a one-on-one support conversation.",
-      isPlaceholder: true,
-    },
-    layout: "feature",
+    visual: "connection",
   },
   {
     slug: "economic-empowerment",
+    number: "04",
     title: "Economic Empowerment",
-    tagline: "Building skills that create independence.",
+    tagline: "From skills to independence.",
     description:
-      "Independence takes more than good intentions. It takes income. Young mothers learn tailoring, crafts, and small-business skills, and are supported to start enterprises that can sustain themselves and their children.",
+      "We help young mothers develop practical skills, start businesses and build pathways toward financial independence.",
     services: [
-      "Vocational and craft training",
-      "Financial literacy",
-      "Business start-up support",
-      "Access to markets for finished goods",
+      "Entrepreneurship",
+      "Financial Literacy",
+      "Business Coaching",
+      "Product Development",
+      "Market Linkages",
+      "Street Business School",
     ],
-    image: {
-      src: "/images/njoo-dada-bracelets.avif",
-      alt: "Handcrafted bracelets made through Njoo Dada's economic empowerment programme.",
-    },
-    layout: "split",
+    visual: "pathway",
   },
   {
     slug: "community-engagement",
+    number: "05",
     title: "Community Engagement",
-    tagline: "Creating communities where girls can thrive.",
+    tagline: "Building communities where girls can thrive.",
     description:
-      "Lasting change reaches beyond any one girl. We work with families, schools, healthcare providers, and local leaders to shift attitudes, strengthen referral pathways, and build communities that protect rather than exclude.",
+      "We work with families, schools and communities to create supportive environments where vulnerable girls and young mothers can rebuild their lives.",
     services: [
-      "Community awareness and dialogue",
-      "School and health-provider partnerships",
-      "Family reintegration support",
-      "Local leader and volunteer engagement",
+      "Awareness Campaigns",
+      "Parent Education",
+      "Community Dialogue",
+      "Family Mediation",
+      "Advocacy",
+      "School Programmes",
     ],
-    image: {
-      src: "/images/volunteer.avif",
-      alt: "A Njoo Dada volunteer engaging with the community.",
-    },
-    secondaryImage: {
-      src: "/images/partner-with-us.avif",
-      alt: "Community partners collaborating with Njoo Dada.",
-    },
-    layout: "collage",
+    visual: "community",
   },
 ];
 
