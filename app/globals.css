@@ -20,8 +20,8 @@
   --border: #e8e3dc;
   --ring: #7a1e75;
 
-  --font-display: var(--font-cormorant);
-  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-poppins);
 }
 
 @theme inline {
