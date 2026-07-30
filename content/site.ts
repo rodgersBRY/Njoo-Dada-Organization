@@ -48,7 +48,7 @@ export const orgIdentity: {
 export const socialLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
   { label: "Facebook", href: "https://www.facebook.com/www.njoodada.org/", isPlaceholder: false },
   { label: "Instagram", href: "https://www.instagram.com/njoodadasafehouse", isPlaceholder: false },
-  { label: "LinkedIn", href: "#", isPlaceholder: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/njoodada/", isPlaceholder: false },
 ];
 
 export const accountabilityLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
