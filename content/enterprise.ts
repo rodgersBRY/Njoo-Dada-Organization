@@ -10,7 +10,7 @@ export const enterpriseContent = {
 
 export const enterpriseImages: ImageAsset[] = [
   {
-    src: "/images/njoo-dada-bracelets.avif",
-    alt: "Handcrafted bracelets made through Njoo Dada's economic empowerment programme.",
+    src: "/images/collage1.jpeg",
+    alt: "Handcrafted bags made through Njoo Dada's economic empowerment programme.",
   },
 ];
