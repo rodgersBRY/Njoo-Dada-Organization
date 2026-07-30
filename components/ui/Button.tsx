@@ -7,6 +7,8 @@ const variantClasses: Record<CtaVariant, string> = {
   primary:
     "bg-primary text-primary-foreground hover:bg-primary/90 border border-primary",
   secondary:
+    "bg-[#f7c948] text-foreground border border-[#f7c948] hover:bg-[#f7c948]/90",
+  outline:
     "bg-transparent text-foreground border border-foreground/30 hover:border-foreground hover:bg-foreground/5",
   ghost:
     "bg-transparent text-accent border border-transparent hover:underline underline-offset-4",

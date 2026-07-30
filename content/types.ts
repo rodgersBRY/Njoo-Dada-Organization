@@ -7,7 +7,7 @@ export type ImageAsset = {
   focalPoint?: string;
 };
 
-export type CtaVariant = "primary" | "secondary" | "ghost";
+export type CtaVariant = "primary" | "secondary" | "outline" | "ghost";
 
 export type Cta = {
   label: string;
