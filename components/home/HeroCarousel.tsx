@@ -43,7 +43,7 @@ export function HeroCarousel({ images }: HeroCarouselProps) {
         <div
           key={image.src}
           aria-hidden={index !== active}
-          className={`absolute inset-0 transition-all duration-[1400ms] ease-out ${
+          className={`absolute inset-0 transition-all duration-1400 ease-out ${
             index === active
               ? "z-10 scale-100 opacity-100"
               : "z-0 scale-110 opacity-0"
@@ -61,8 +61,9 @@ export function HeroCarousel({ images }: HeroCarouselProps) {
         </div>
       ))}
 
+      {/* Translucent scrim keeps the dashes legible over light imagery. */}
       {images.length > 1 ? (
-        <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full bg-foreground/40 px-3 py-1.5 backdrop-blur-sm">
           {images.map((image, index) => (
             <button
               key={image.src}
@@ -75,7 +76,7 @@ export function HeroCarousel({ images }: HeroCarouselProps) {
               <span
                 aria-hidden="true"
                 className={`h-2 w-6 rounded-full transition-colors ${
-                  index === active ? "bg-background" : "bg-background/40"
+                  index === active ? "bg-background" : "bg-background/50"
                 }`}
               />
             </button>
