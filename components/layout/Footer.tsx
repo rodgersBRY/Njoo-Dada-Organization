@@ -28,9 +28,9 @@ export function Footer() {
           <Image
             src="/images/logo.png"
             alt={siteConfig.name}
-            width={46}
-            height={40}
-            className="h-10 w-auto"
+            width={64}
+            height={56}
+            className="h-14 w-auto"
           />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             {siteConfig.description}

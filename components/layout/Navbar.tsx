@@ -34,10 +34,10 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt={siteConfig.name}
-            width={46}
-            height={40}
+            width={64}
+            height={56}
             priority
-            className="h-10 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
