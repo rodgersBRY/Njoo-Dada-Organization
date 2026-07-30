@@ -33,15 +33,18 @@ export function MobileMenu({ open, onClose, navItems, cta }: MobileMenuProps) {
   }, [open, onClose]);
 
   return (
-    // Outer wrapper never exceeds the viewport and clips the sliding panel,
-    // so the off-canvas panel can't inflate document scrollWidth on mobile.
+    // Clips the sliding panel so it can't inflate document scrollWidth, and
+    // collapses to zero size when closed so the overlay never swallows touch
+    // scroll gestures over the page beneath it.
     <div
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
       aria-label="Mobile navigation"
       inert={!open}
-      className="fixed inset-0 top-[72px] z-40 overflow-hidden md:hidden"
+      className={`fixed inset-x-0 top-[72px] z-40 overflow-hidden md:hidden ${
+        open ? "bottom-0" : "bottom-auto h-0"
+      }`}
     >
       <div
         className={`h-full w-full bg-background transition-transform duration-300 ease-out ${
