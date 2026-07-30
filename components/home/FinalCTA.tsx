@@ -24,16 +24,7 @@ export function FinalCTA() {
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           {finalCtaContent.ctas.map((cta) => (
-            <Button
-              key={cta.label}
-              href={cta.href}
-              variant={cta.variant === "primary" ? "primary" : "secondary"}
-              className={
-                cta.variant === "secondary"
-                  ? "border-background/40 text-background hover:border-background hover:bg-background/10"
-                  : ""
-              }
-            >
+            <Button key={cta.label} href={cta.href} variant={cta.variant === "primary" ? "primary" : "secondary"}>
               {cta.label}
             </Button>
           ))}
