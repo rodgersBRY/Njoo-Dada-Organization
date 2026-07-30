@@ -1,18 +1,12 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { finalCtaContent, finalCtaImage } from "@/content/final-cta";
 
 export function FinalCTA() {
   return (
     <section className="relative overflow-hidden py-28 md:py-36">
-      <Image
-        src={finalCtaImage.src}
-        alt={finalCtaImage.alt}
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
+      <ParallaxImage image={finalCtaImage} sizes="100vw" />
       <div className="absolute inset-0 bg-foreground/70" />
 
       <Container className="relative max-w-3xl text-background">
@@ -24,7 +18,11 @@ export function FinalCTA() {
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           {finalCtaContent.ctas.map((cta) => (
-            <Button key={cta.label} href={cta.href} variant={cta.variant === "primary" ? "primary" : "secondary"}>
+            <Button
+              key={cta.label}
+              href={cta.href}
+              variant={cta.variant === "primary" ? "primary" : "secondary"}
+            >
               {cta.label}
             </Button>
           ))}
