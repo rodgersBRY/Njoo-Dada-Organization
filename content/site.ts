@@ -40,8 +40,8 @@ export const orgIdentity: {
   },
   phone: {
     label: "Phone",
-    value: "[CLIENT TO PROVIDE]",
-    isPlaceholder: true,
+    value: "+254720149568",
+    isPlaceholder: false,
   },
 };
 
@@ -53,6 +53,9 @@ export const socialLinks: { label: string; href: string; isPlaceholder: boolean 
 
 export const accountabilityLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
   { label: "Annual report", href: "#", isPlaceholder: true },
+];
+
+export const legalLinks: { label: string; href: string; isPlaceholder: boolean }[] = [
   { label: "Safeguarding policy", href: "#", isPlaceholder: true },
   { label: "Privacy policy", href: "#", isPlaceholder: true },
 ];

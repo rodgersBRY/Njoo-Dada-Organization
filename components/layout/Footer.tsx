@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { navItems } from "@/content/navigation";
-import { siteConfig, orgIdentity, socialLinks, accountabilityLinks } from "@/content/site";
+import {
+  siteConfig,
+  orgIdentity,
+  socialLinks,
+  accountabilityLinks,
+  legalLinks,
+} from "@/content/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -92,11 +98,23 @@ export function Footer() {
       </Container>
 
       <div className="border-t border-border py-6">
-        <Container className="flex flex-col items-center justify-between gap-2 text-xs text-muted-foreground md:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-3 text-xs text-muted-foreground md:flex-row">
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
+            <span className="italic"> {orgIdentity.registrationStatus.value}</span>
           </p>
-          <p className="italic">{orgIdentity.registrationStatus.value}</p>
+          <ul className="flex gap-6">
+            {legalLinks.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="underline-offset-4 hover:text-foreground hover:underline"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Container>
       </div>
     </footer>

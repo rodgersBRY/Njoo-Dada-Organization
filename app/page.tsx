@@ -8,6 +8,7 @@ import { EnterpriseSection } from "@/components/home/EnterpriseSection";
 import { GetInvolved } from "@/components/home/GetInvolved";
 import { Partners } from "@/components/home/Partners";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { ContactSection } from "@/components/home/ContactSection";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <GetInvolved />
       <Partners />
       <FinalCTA />
+      <ContactSection />
     </>
   );
 }
