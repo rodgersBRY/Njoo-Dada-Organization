@@ -24,8 +24,8 @@ export const featuredStory: BeneficiaryStory = {
     src: "/images/yvonne-whitney-salon.webp",
     alt: "Yvonne at work in a hair and beauty salon, building the career she trained for.",
   },
-  href: "/#stories",
-  ctaLabel: "Read her story",
+  href: "https://kcdf.or.ke/njoo-dada-safe-house/",
+  ctaLabel: "Read Yvonne's story",
   requiresApproval: true,
 };
 
@@ -42,8 +42,8 @@ export const supportingStories: BeneficiaryStory[] = [
       src: "/images/peninah-cakes.webp",
       alt: "Peninah with baked goods from the catering business built on her baking skills.",
     },
-    href: "/#stories",
-    ctaLabel: "Read story",
+    href: "https://kcdf.or.ke/njoo-dada-safe-house/",
+    ctaLabel: "Read Peninah's story",
     requiresApproval: true,
   },
   {
@@ -58,8 +58,8 @@ export const supportingStories: BeneficiaryStory[] = [
       src: "/images/serah-nyambura-tailor.webp",
       alt: "Serah working as a tailor, the skill that now supports her and her family.",
     },
-    href: "/#stories",
-    ctaLabel: "Read story",
+    href: "https://kcdf.or.ke/njoo-dada-safe-house/",
+    ctaLabel: "Read Serah's story",
     requiresApproval: true,
   },
 ];

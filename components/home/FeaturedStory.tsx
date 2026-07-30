@@ -37,6 +37,7 @@ export function FeaturedStory({ story }: { story: BeneficiaryStory }) {
           <Button href={story.href} variant="primary">
             {story.ctaLabel}
           </Button>
+          <p className="mt-2 text-xs text-muted-foreground">Story published by KCDF</p>
         </div>
       </div>
     </Reveal>

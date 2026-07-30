@@ -47,6 +47,7 @@ export function SupportingStoryBlock({
           <Button href={story.href} variant="ghost">
             {story.ctaLabel}
           </Button>
+          <p className="mt-1 text-xs text-muted-foreground">Story published by KCDF</p>
         </div>
       </div>
     </Reveal>
