@@ -2,7 +2,9 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProgrammeAnchor, ProgrammeBlock } from "@/components/home/ProgrammeBlock";
+import { ProgrammeSpotlight } from "@/components/home/ProgrammeSpotlight";
 import { programmes, programmesIntro } from "@/content/programmes";
+import { programmeImages } from "@/content/programme-imagery";
 
 export function Programmes() {
   const [anchor, ...rest] = programmes;
@@ -17,8 +19,14 @@ export function Programmes() {
         >
           {programmesIntro.headline}
         </SectionHeading>
+      </Container>
 
-        <div className="relative mt-14 md:mt-16">
+      <Reveal as="div" className="mt-10 md:mt-12">
+        <ProgrammeSpotlight />
+      </Reveal>
+
+      <Container>
+        <div className="relative mt-10 md:mt-14">
           {/* Curved thread echoing the logo arc, linking the programmes without
               implying they are mandatory sequential steps. */}
           <svg
@@ -44,11 +52,16 @@ export function Programmes() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <Reveal as="div" delayMs={80}>
-                <ProgrammeBlock programme={education} className="h-full" />
+                <ProgrammeBlock
+                  programme={education}
+                  image={programmeImages.beneficiary1}
+                  className="h-full"
+                />
               </Reveal>
               <Reveal as="div" delayMs={160}>
                 <ProgrammeBlock
                   programme={psychosocial}
+                  image={programmeImages.skillsTraining}
                   className="h-full bg-secondary/30 md:mt-10"
                 />
               </Reveal>
@@ -56,7 +69,11 @@ export function Programmes() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
               <Reveal as="div" delayMs={80} className="md:col-span-7">
-                <ProgrammeBlock programme={economic} className="h-full" />
+                <ProgrammeBlock
+                  programme={economic}
+                  image={programmeImages.beneficiary}
+                  className="h-full"
+                />
               </Reveal>
               <Reveal as="div" delayMs={160} className="md:col-span-5">
                 <ProgrammeBlock

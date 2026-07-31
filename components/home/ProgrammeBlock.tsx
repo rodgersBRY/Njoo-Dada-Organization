@@ -1,6 +1,7 @@
 import { ProgrammeVisual } from "@/components/home/ProgrammeVisual";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { cn } from "@/lib/cn";
-import type { Programme } from "@/content/types";
+import type { ImageAsset, Programme } from "@/content/types";
 
 function ServiceVocabulary({
   services,
@@ -68,21 +69,9 @@ export function ProgrammeAnchor({ programme }: { programme: Programme }) {
   );
 }
 
-/** Standard editorial block used for the remaining programmes. */
-export function ProgrammeBlock({
-  programme,
-  className = "",
-}: {
-  programme: Programme;
-  className?: string;
-}) {
+function ProgrammeBlockContent({ programme }: { programme: Programme }) {
   return (
-    <article
-      className={cn(
-        "group relative flex flex-col rounded-sm border border-border p-8 transition-colors duration-300 hover:bg-secondary/40 md:p-10",
-        className,
-      )}
-    >
+    <>
       <div className="flex items-start justify-between gap-6">
         <ProgrammeNumber number={programme.number} className="text-4xl md:text-5xl" />
         <ProgrammeVisual
@@ -99,6 +88,49 @@ export function ProgrammeBlock({
         {programme.description}
       </p>
       <ServiceVocabulary services={programme.services} className="mt-7" />
+    </>
+  );
+}
+
+/** Standard editorial block used for the remaining programmes. */
+export function ProgrammeBlock({
+  programme,
+  image,
+  className = "",
+}: {
+  programme: Programme;
+  /** Optional side-panel photograph. Stacks above the text on mobile. */
+  image?: ImageAsset;
+  className?: string;
+}) {
+  if (image) {
+    return (
+      <article
+        className={cn(
+          "group relative flex flex-col overflow-hidden rounded-sm border border-border transition-colors duration-300 hover:bg-secondary/40 sm:flex-row",
+          className,
+        )}
+      >
+        <ImageFrame
+          image={image}
+          className="aspect-16/10 w-full shrink-0 border-0 sm:aspect-auto sm:w-2/5"
+          sizes="(min-width: 768px) 25vw, 90vw"
+        />
+        <div className="flex min-w-0 flex-1 flex-col p-8 md:p-10">
+          <ProgrammeBlockContent programme={programme} />
+        </div>
+      </article>
+    );
+  }
+
+  return (
+    <article
+      className={cn(
+        "group relative flex flex-col rounded-sm border border-border p-8 transition-colors duration-300 hover:bg-secondary/40 md:p-10",
+        className,
+      )}
+    >
+      <ProgrammeBlockContent programme={programme} />
     </article>
   );
 }

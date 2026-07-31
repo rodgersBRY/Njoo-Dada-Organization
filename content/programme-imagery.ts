@@ -8,6 +8,9 @@ import type { ImageAsset } from "./types";
  * gaussian blur, composited over the original at native resolution) — owner
  * consent covers the organisation's use of the photo, but not the children.
  */
+export const programmeSpotlightCaption =
+  "From safety to certificates in hand — five programmes, one path forward.";
+
 export const programmeImages = {
   graduation: {
     src: "/images/programmes/graduation.jpeg",
