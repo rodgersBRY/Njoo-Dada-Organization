@@ -2,8 +2,9 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/home/ContactForm";
+import { socialIcons } from "@/lib/social-icons";
 import { contactContent } from "@/content/contact";
-import { orgIdentity } from "@/content/site";
+import { orgIdentity, socialLinks } from "@/content/site";
 
 export function ContactSection() {
   return (
@@ -65,6 +66,33 @@ export function ContactSection() {
                   className={`mt-2 text-lg ${orgIdentity.postalAddress.isPlaceholder ? "italic text-muted-foreground" : "text-foreground"}`}
                 >
                   {orgIdentity.postalAddress.value}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Follow us
+                </dt>
+                <dd className="mt-3 flex flex-col gap-2.5">
+                  {socialLinks.map((social) => {
+                    const Icon = socialIcons[social.label];
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2.5 text-foreground underline-offset-4 hover:underline"
+                      >
+                        <Icon aria-hidden="true" className="h-4 w-4 shrink-0 text-muted-foreground" />
+                        <span>
+                          {social.label}
+                          {social.handle ? (
+                            <span className="text-muted-foreground"> · {social.handle}</span>
+                          ) : null}
+                        </span>
+                      </a>
+                    );
+                  })}
                 </dd>
               </div>
             </dl>

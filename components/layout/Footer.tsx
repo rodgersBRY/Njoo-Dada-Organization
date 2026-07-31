@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import type { IconType } from "react-icons";
 import { Container } from "@/components/ui/Container";
 import { navItems } from "@/content/navigation";
+import { socialIcons } from "@/lib/social-icons";
 import {
   siteConfig,
   orgIdentity,
@@ -11,12 +10,6 @@ import {
   accountabilityLinks,
   legalLinks,
 } from "@/content/site";
-
-const socialIcons: Record<string, IconType> = {
-  Facebook: FaFacebook,
-  Instagram: FaInstagram,
-  LinkedIn: FaLinkedin,
-};
 
 export function Footer() {
   const year = new Date().getFullYear();

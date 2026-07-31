@@ -36,6 +36,8 @@ export const orgIdentity: {
 export const socialLinks: {
   label: string;
   href: string;
+  /** Visible @handle, where the platform has one worth showing (not every platform does). */
+  handle?: string;
   isPlaceholder: boolean;
 }[] = [
   {
@@ -46,6 +48,13 @@ export const socialLinks: {
   {
     label: "Instagram",
     href: "https://www.instagram.com/njoodadasafehouse",
+    handle: "@njoodadasafehouse",
+    isPlaceholder: false,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@njoo_dada",
+    handle: "@njoo_dada",
     isPlaceholder: false,
   },
   {
