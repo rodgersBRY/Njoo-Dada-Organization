@@ -12,11 +12,6 @@ type ImageFrameProps = {
   height?: number;
 };
 
-/**
- * Consistent editorial image treatment. Images sourced here are verified,
- * appropriately licensed placeholder stock photography. See content/*.ts
- * for per-image notes on replacing with approved Njoo Dada photography.
- */
 export function ImageFrame({
   image,
   sizes = "(min-width: 1024px) 50vw, 100vw",
@@ -28,7 +23,10 @@ export function ImageFrame({
 }: ImageFrameProps) {
   return (
     <div
-      className={cn("relative overflow-hidden border border-border bg-muted", className)}
+      className={cn(
+        "relative overflow-hidden border border-border bg-muted",
+        className,
+      )}
     >
       {fill ? (
         <Image
