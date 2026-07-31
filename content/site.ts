@@ -8,7 +8,7 @@ export const siteConfig = {
   tagline: "Every girl deserves the chance to build a future.",
   description:
     "Njoo Dada supports vulnerable teenage girls and young mothers in Kenya to move beyond crisis, regain opportunity, and build independent lives with dignity, through protection, education, psychosocial support, economic empowerment, and family reintegration.",
-  url: "https://www.njoodada.org",
+  url: "https://www.njoodada.or.ke",
 };
 
 export const orgIdentity: {
