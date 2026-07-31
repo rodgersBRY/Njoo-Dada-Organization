@@ -62,6 +62,7 @@ export function Programmes() {
                 <ProgrammeBlock
                   programme={psychosocial}
                   image={programmeImages.skillsTraining}
+                  imageLayout="top"
                   className="h-full bg-secondary/30 md:mt-10"
                 />
               </Reveal>

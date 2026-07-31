@@ -96,13 +96,41 @@ function ProgrammeBlockContent({ programme }: { programme: Programme }) {
 export function ProgrammeBlock({
   programme,
   image,
+  imageLayout = "side",
   className = "",
 }: {
   programme: Programme;
-  /** Optional side-panel photograph. Stacks above the text on mobile. */
+  /** Optional photograph. */
   image?: ImageAsset;
+  /**
+   * "side" suits portrait photos — a narrow column stretched to the text's
+   * height, via `object-cover`. "top" suits landscape photos — a full-width
+   * band at `aspect-4/3`, matching this project's landscape source images
+   * exactly, so `object-cover` has nothing left to crop.
+   */
+  imageLayout?: "side" | "top";
   className?: string;
 }) {
+  if (image && imageLayout === "top") {
+    return (
+      <article
+        className={cn(
+          "group relative flex flex-col overflow-hidden rounded-sm border border-border transition-colors duration-300 hover:bg-secondary/40",
+          className,
+        )}
+      >
+        <ImageFrame
+          image={image}
+          className="aspect-4/3 w-full border-0"
+          sizes="(min-width: 768px) 45vw, 90vw"
+        />
+        <div className="flex flex-1 flex-col p-8 md:p-10">
+          <ProgrammeBlockContent programme={programme} />
+        </div>
+      </article>
+    );
+  }
+
   if (image) {
     return (
       <article
