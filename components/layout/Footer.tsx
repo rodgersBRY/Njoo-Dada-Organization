@@ -86,23 +86,42 @@ export function Footer() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Contact &amp; Accountability
+            Contact &amp; Address
           </p>
+
           <ul className="mt-4 flex flex-col gap-3 text-sm text-foreground/80">
-            <li className={orgIdentity.email.isPlaceholder ? "text-muted-foreground italic" : ""}>
+            <li
+              className={
+                orgIdentity.email.isPlaceholder
+                  ? "text-muted-foreground italic"
+                  : ""
+              }
+            >
               {orgIdentity.email.isPlaceholder ? (
                 orgIdentity.email.value
               ) : (
-                <a href={`mailto:${orgIdentity.email.value}`} className="hover:text-foreground hover:underline">
+                <a
+                  href={`mailto:${orgIdentity.email.value}`}
+                  className="hover:text-foreground hover:underline"
+                >
                   {orgIdentity.email.value}
                 </a>
               )}
             </li>
-            <li className={orgIdentity.phone.isPlaceholder ? "text-muted-foreground italic" : ""}>
+            <li
+              className={
+                orgIdentity.phone.isPlaceholder
+                  ? "text-muted-foreground italic"
+                  : ""
+              }
+            >
               {orgIdentity.phone.isPlaceholder ? (
                 orgIdentity.phone.value
               ) : (
-                <a href={`tel:${orgIdentity.phone.value}`} className="hover:text-foreground hover:underline">
+                <a
+                  href={`tel:${orgIdentity.phone.value}`}
+                  className="hover:text-foreground hover:underline"
+                >
                   {orgIdentity.phone.value}
                 </a>
               )}
@@ -117,7 +136,12 @@ export function Footer() {
               {orgIdentity.postalAddress.value}
             </li>
           </ul>
-          <ul className="mt-6 flex flex-col gap-3">
+
+          <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Resources
+          </p>
+
+          <ul className="mt-4 flex flex-col gap-3">
             {accountabilityLinks.map((link) => (
               <li key={link.label}>
                 <Link
@@ -137,6 +161,21 @@ export function Footer() {
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
+
+          <p>
+            Developed &amp; maintained by{" "}
+            <a
+              href={`https://wa.me/254712413243?text=${encodeURIComponent(
+                "Hi Mawira, I'm reaching out about the Njoo Dada website.",
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 text-primary hover:underline"
+            >
+              Mawira
+            </a>
+          </p>
+
           <ul className="flex gap-6">
             {legalLinks.map((link) => (
               <li key={link.label}>
