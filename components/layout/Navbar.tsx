@@ -71,15 +71,15 @@ export function Navbar() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             className="flex min-h-11 min-w-11 items-center justify-center text-foreground md:hidden"
           >
-            {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+            {mobileOpen ? (
+              <X aria-hidden="true" />
+            ) : (
+              <Menu aria-hidden="true" />
+            )}
           </button>
         </Container>
       </header>
 
-      {/* Rendered outside <header> on purpose: once scrolled, the header gains
-          backdrop-blur, and a backdrop-filter makes an element the containing
-          block for fixed-position descendants — which would collapse this
-          fixed overlay to zero height. */}
       <MobileMenu
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
