@@ -33,22 +33,19 @@ export function MobileMenu({ open, onClose, navItems, cta }: MobileMenuProps) {
   }, [open, onClose]);
 
   return (
-    // Clips the sliding panel so it can't inflate document scrollWidth, and
-    // collapses to zero size when closed so the overlay never swallows touch
-    // scroll gestures over the page beneath it.
     <div
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
       aria-label="Mobile navigation"
       inert={!open}
-      className={`fixed inset-x-0 top-[72px] z-40 overflow-hidden md:hidden ${
+      className={`fixed inset-x-0 top-18 z-40 overflow-hidden md:hidden ${
         open ? "bottom-0" : "bottom-auto h-0"
       }`}
     >
       <div
-        className={`h-full w-full bg-background transition-transform duration-300 ease-out ${
-          open ? "translate-x-0" : "translate-x-full"
+        className={`h-full w-full bg-background transition-transform duration-1000 ease-out ${
+          open ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="flex h-full flex-col justify-between px-6 py-10">
