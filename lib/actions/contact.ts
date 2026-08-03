@@ -3,7 +3,7 @@
 import { headers } from "next/headers";
 
 export type ContactFieldErrors = Partial<
-  Record<"name" | "email" | "topic" | "message", string>
+  Record<"name" | "email" | "topic" | "message" | "consent", string>
 >;
 
 export type ContactFormState = {
@@ -40,6 +40,7 @@ export async function submitContactForm(
   const email = String(formData.get("email") ?? "").trim();
   const topic = String(formData.get("topic") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
+  const consent = formData.get("consent") === "on";
 
   const errors: ContactFieldErrors = {};
   if (!name) errors.name = "Enter your name.";
@@ -50,6 +51,8 @@ export async function submitContactForm(
   if (!message) errors.message = "Enter a message.";
   else if (message.length < 10)
     errors.message = "Message should be at least 10 characters.";
+  if (!consent)
+    errors.consent = "Please confirm you've read the Privacy & Data Protection Policy.";
 
   if (Object.keys(errors).length > 0) {
     return { status: "error", errors, message: "Please fix the fields below." };

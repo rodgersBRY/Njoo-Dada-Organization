@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { submitContactForm, type ContactFormState } from "@/lib/actions/contact";
 import { contactContent } from "@/content/contact";
 
@@ -21,6 +22,15 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [consentChecked, setConsentChecked] = useState(false);
+  const [prevStatus, setPrevStatus] = useState(state.status);
+
+  if (state.status !== prevStatus) {
+    setPrevStatus(state.status);
+    if (state.status === "success") {
+      setConsentChecked(false);
+    }
+  }
 
   useEffect(() => {
     if (state.status === "success") {
@@ -131,13 +141,45 @@ export function ContactForm() {
         {state.message}
       </div>
 
+      <div>
+        <div className="flex items-start gap-3">
+          <input
+            id="contact-consent"
+            name="consent"
+            type="checkbox"
+            checked={consentChecked}
+            onChange={(event) => setConsentChecked(event.target.checked)}
+            required
+            aria-invalid={Boolean(state.errors?.consent)}
+            aria-describedby={state.errors?.consent ? "contact-consent-error" : undefined}
+            className="mt-1 h-4 w-4 shrink-0 rounded border-border text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          />
+          <label htmlFor="contact-consent" className="text-sm leading-relaxed text-foreground/80">
+            {contactContent.consentLabelPrefix}
+            <Link href="/privacy" className="text-foreground underline-offset-4 hover:underline">
+              {contactContent.consentLinkText}
+            </Link>
+            .
+          </label>
+        </div>
+        <FieldError id="contact-consent-error" message={state.errors?.consent} />
+      </div>
+
       <button
         type="submit"
-        disabled={isPending}
+        disabled={isPending || !consentChecked}
         className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-primary bg-primary px-6 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-colors duration-200 hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {isPending ? "Sending…" : "Send Message"}
       </button>
+
+      <p className="text-xs leading-relaxed text-muted-foreground">
+        {contactContent.privacyNoticeText}
+        <Link href="/privacy" className="text-foreground underline-offset-4 hover:underline">
+          {contactContent.privacyNoticeLinkText}
+        </Link>
+        .
+      </p>
     </form>
   );
 }

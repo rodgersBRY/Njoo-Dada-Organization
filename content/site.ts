@@ -76,5 +76,5 @@ export const legalLinks: {
   isPlaceholder: boolean;
 }[] = [
   { label: "Safeguarding policy", href: "#", isPlaceholder: true },
-  { label: "Privacy policy", href: "#", isPlaceholder: true },
+  { label: "Privacy & Data Protection", href: "/privacy", isPlaceholder: false },
 ];
