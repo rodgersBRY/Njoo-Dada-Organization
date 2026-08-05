@@ -35,6 +35,8 @@ export function Footer() {
                 <li key={social.label}>
                   <Link
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-accent"
                     aria-label={
                       social.isPlaceholder
